@@ -5,6 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
+import com.example.vegetableapp.ui.theme.Shapes
 
 
 private val LightColors = lightColorScheme(
@@ -85,6 +86,7 @@ fun VegetableAppTheme(
 
   MaterialTheme(
     colorScheme = colors,
-    content = content
+    content = content,
+    shapes = Shapes
   )
 }
