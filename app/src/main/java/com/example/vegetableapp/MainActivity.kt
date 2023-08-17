@@ -21,15 +21,25 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    App()
                 }
             }
         }
     }
 }
 
-@Preview(showBackground = true)
+@Composable
+fun App(){
+    LogoScreen()
+}
+
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
 @Composable
 fun VegetableAppPreview() {
     VegetableAppTheme(useDarkTheme = true){
+        LogoScreen()
     }
 }
