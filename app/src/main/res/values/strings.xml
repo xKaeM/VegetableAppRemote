@@ -2,6 +2,8 @@
     <string name="app_name">Vegetable App</string>
     <string name="next_button">Next</string>
 
+    <string name="choose_products">Choose Products</string>
+
     <string name="apple">Apple</string>
     <string name="banana">Banana</string>
     <string name="bell_pepper">Bell Pepper</string>
@@ -37,5 +39,8 @@
     <string name="each">each</string>
     <string name="per_16_91_fl_oz">per 16.91 fl oz</string>
     <string name="per_three_juices">per 3 juices</string>
+
+    <string name="add_button">Add</string>
+    <string name="your_order_button">Your Order</string>
 
 </resources>

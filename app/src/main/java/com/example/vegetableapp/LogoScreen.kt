@@ -33,14 +33,14 @@ import androidx.compose.ui.unit.sp
 import com.example.compose.VegetableAppTheme
 
 @Composable
-fun LogoScreen(){
+fun LogoScreen(f: ()->Unit){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
     ){
         Spacer(Modifier.height(dimensionResource(id = R.dimen.spacer_height_small)))
-        LogoText(
+        TextOnTheTop(
             logoText = R.string.app_name
         )
         Spacer(Modifier.height(dimensionResource(id = R.dimen.spacer_height_medium)))
@@ -48,7 +48,7 @@ fun LogoScreen(){
             logoImage = R.drawable.bananas
         )
         Spacer(Modifier.height(dimensionResource(id = R.dimen.spacer_height_large) * 2))
-        NextButton(buttonText = R.string.next_button)
+        NextButton(buttonText = R.string.next_button, f)
     }
 }
 
@@ -59,31 +59,7 @@ fun LogoScreen(){
 @Composable
 fun LogoScreenPreview(){
     VegetableAppTheme(useDarkTheme = true) {
-        LogoScreen()
-    }
-}
-
-@Composable
-fun LogoText(
-    @StringRes logoText: Int
-){
-    Text(
-        text = stringResource(id = logoText),
-        style = TextStyle(
-            fontSize = 48.sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onBackground
-        )
-    )
-}
-
-@Preview
-@Composable
-fun LogoTextPreview(){
-    VegetableAppTheme(useDarkTheme = true){
-        LogoText(
-            logoText = R.string.app_name
-        )
+        LogoScreen({})
     }
 }
 
@@ -124,10 +100,11 @@ fun LogoImagePreview(){
 
 @Composable
 fun NextButton(
-    @StringRes buttonText: Int
+    @StringRes buttonText: Int,
+    f: () -> Unit
 ){
     Button(
-        onClick = { /*TODO*/ },
+        onClick = {f()},
         modifier = Modifier
             .size(
                 width = dimensionResource(id = R.dimen.button_width),
@@ -148,6 +125,6 @@ fun NextButton(
 @Composable
 fun NextButtonPreview(){
     VegetableAppTheme(useDarkTheme = true) {
-        NextButton(buttonText = R.string.next_button)
+        NextButton(buttonText = R.string.next_button, {})
     }
 }
