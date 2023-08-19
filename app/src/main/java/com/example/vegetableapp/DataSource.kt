@@ -1,0 +1,35 @@
+package com.example.vegetableapp
+
+class DataSource{
+    val productList = listOf(
+        Product(R.string.apple, R.drawable.apple, 1.49, R.string.per_pound),
+        Product(R.string.banana, R.drawable.bananas, 1.99, R.string.per_pound),
+        Product(R.string.bell_pepper, R.drawable.bell_pepper, 3.79, R.string.per_pound),
+        Product(R.string.broccoli, R.drawable.broccoli, 1.79, R.string.each),
+        Product(R.string.cabbage, R.drawable.cabbage, 1.59, R.string.per_pound),
+        Product(R.string.carrot, R.drawable.carrot, 1.79, R.string.per_pound),
+        Product(R.string.cherry, R.drawable.cherries, 4.99, R.string.per_pound),
+        Product(R.string.corn, R.drawable.corn, 0.99, R.string.each),
+        Product(R.string.dragon_fruit, R.drawable.dragon_fruit, 5.99, R.string.each),
+        Product(R.string.durian, R.drawable.durian, 49.99, R.string.each),
+        Product(R.string.eggplant, R.drawable.eggplant, 3.69, R.string.per_pound),
+        Product(R.string.juice, R.drawable.juice, 2.99, R.string.per_three_juices),
+        Product(R.string.kiwi, R.drawable.kiwi, 0.99, R.string.each),
+        Product(R.string.lemon, R.drawable.lemon, 2.49, R.string.per_pound),
+        Product(R.string.onion, R.drawable.onion, 1.49, R.string.per_pound),
+        Product(R.string.red_onion, R.drawable.onion_red, 1.99, R.string.per_pound),
+        Product(R.string.orange, R.drawable.orange, 2.49, R.string.per_pound),
+        Product(R.string.passion_fruit, R.drawable.passion_fruit, 1.99, R.string.each),
+        Product(R.string.pea, R.drawable.pea, 4.99, R.string.per_pound),
+        Product(R.string.pineapple, R.drawable.pineapple, 3.49, R.string.each),
+        Product(R.string.pink_pineapple, R.drawable.pineapple_pink, 10.99, R.string.each),
+        Product(R.string.potato, R.drawable.potato, 1.49, R.string.per_pound),
+        Product(R.string.pumpkin, R.drawable.pumpkin, 1.49, R.string.per_pound),
+        Product(R.string.spinach, R.drawable.spinach, 4.99, R.string.per_pound),
+        Product(R.string.strawberry, R.drawable.strawberry, 4.49, R.string.per_pound),
+        Product(R.string.tomato, R.drawable.tomato, 3.49, R.string.per_pound),
+        Product(R.string.water, R.drawable.water, 1.49, R.string.per_16_91_fl_oz),
+        Product(R.string.watermelon, R.drawable.watermelon, 1.49, R.string.per_pound),
+        Product(R.string.zucchini, R.drawable.zucchini, 2.99, R.string.per_pound),
+    )
+}

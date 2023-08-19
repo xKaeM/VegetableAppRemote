@@ -41,6 +41,6 @@
     <string name="per_three_juices">per 3 juices</string>
 
     <string name="add_button">Add</string>
-    <string name="your_order_button">Your Order</string>
+    <string name="order_button">Order</string>
 
 </resources>
