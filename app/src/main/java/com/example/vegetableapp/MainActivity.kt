@@ -37,7 +37,7 @@ fun App(){
     var index by remember {mutableStateOf(0)}
     when(index){
         0 ->  LogoScreen({index++})
-        1 -> HomeScreen()
+        1 -> HomeScreen({index++})
     }
 }
 

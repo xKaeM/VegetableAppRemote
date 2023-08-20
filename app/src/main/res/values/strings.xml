@@ -44,6 +44,7 @@
     <string name="order_button">Order</string>
     <string name="minus_button">-</string>
     <string name="plus_button">+</string>
-
+    <string name="previous_button">&lt;</string>
+    <string name="next2_button">&gt;</string>
 
 </resources>

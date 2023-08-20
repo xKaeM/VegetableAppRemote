@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.sp
 import com.example.compose.VegetableAppTheme
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(f: ()->Unit){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -48,7 +48,7 @@ fun HomeScreen(){
         Spacer(Modifier.height(dimensionResource(id = R.dimen.spacer_height_small)))
         TextOnTheTop(logoText = R.string.choose_products)
         Spacer(Modifier.height(dimensionResource(id = R.dimen.spacer_height_medium)))
-        ProductCard(DataSource().productList[0])
+        ProductCard(DataSource().productList, f)
 
     }
 }
@@ -60,19 +60,20 @@ fun HomeScreen(){
 @Composable
 fun HomeScreenPreview(){
     VegetableAppTheme(useDarkTheme = true){
-        HomeScreen()
+        HomeScreen({})
     }
 }
 
 @Composable
-fun ProductCard(product: Product){
+fun ProductCard(product: List<Product>, f:()->Unit){
     var amount by remember {mutableStateOf(0)}
+    var listIndex by remember {mutableStateOf(0)}
     Card(
         modifier = Modifier.padding(10.dp)
     ){
         Column(
             modifier = Modifier
-                .size(width = 400.dp, height = 410.dp)
+                .size(width = 400.dp, height = 490.dp)
                 .padding(10.dp)
         ){
             Row(
@@ -84,13 +85,23 @@ fun ProductCard(product: Product){
                     .padding(vertical = 10.dp),
                 horizontalArrangement = Arrangement.Center,
             ) {
-                CardImage(product.productImage)
+                CardImage(product[listIndex].productImage)
                 Spacer(Modifier.width(dimensionResource(id = R.dimen.spacer_width_small)))
                 CardText(
-                    product.productName,
-                    product.price,
-                    product.poundsOrEach
+                    product[listIndex].productName,
+                    product[listIndex].price,
+                    product[listIndex].poundsOrEach
                 )
+            }
+            Spacer(Modifier.height(dimensionResource(id = R.dimen.spacer_height_small)))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center,
+            ){
+                CardButton(buttonText = R.string.previous_button, {if(listIndex>0)listIndex--})
+                Spacer(Modifier.width(dimensionResource(id = R.dimen.spacer_width_small)))
+                CardButton(buttonText = R.string.next2_button, {if(listIndex>=0 && listIndex<product.lastIndex)listIndex++})
             }
             Spacer(Modifier.height(dimensionResource(id = R.dimen.spacer_height_small)))
             Row(
@@ -107,7 +118,7 @@ fun ProductCard(product: Product){
                 )
                 Spacer(Modifier.width(dimensionResource(id = R.dimen.spacer_width_large)))
                 Text(
-                    text = "Total: \$${product.price * amount}",
+                    text = "Total: \$${product[listIndex].price * amount}",
                     style = TextStyle(
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold
@@ -142,7 +153,7 @@ fun ProductCard(product: Product){
 @Composable
 fun ProductCardPreview(){
     VegetableAppTheme(useDarkTheme = true){
-        ProductCard(Product(R.string.apple, R.drawable.apple, 2.31, R.string.per_pound))
+        ProductCard(DataSource().productList,{})
     }
 }
 
